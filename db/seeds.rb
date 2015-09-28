@@ -9,7 +9,7 @@ ActiveRecord::Base.connection.execute('TRUNCATE ' + AdminUser.table_name + ' RES
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 
 
-#ActiveRecord::Base.connection.execute('TRUNCATE ' + Country.table_name + ' RESTART IDENTITY')
+ActiveRecord::Base.connection.execute('TRUNCATE ' + Country.table_name + ' RESTART IDENTITY')
 
 #countries_csv_path = File.join(Rails.root, 'db', 'GeoIPCountryWhois.csv')
 
@@ -19,7 +19,7 @@ AdminUser.create!(email: 'admin@example.com', password: 'password', password_con
 #  end
 #end
 
-#ActiveRecord::Base.connection.execute('TRUNCATE ' + City.table_name + ' RESTART IDENTITY') #
+ActiveRecord::Base.connection.execute('TRUNCATE ' + City.table_name + ' RESTART IDENTITY') #
 
 #cities_csv_path = File.join(Rails.root, 'db', 'GeoLiteCity-Location.csv')
 
@@ -35,3 +35,7 @@ AdminUser.create!(email: 'admin@example.com', password: 'password', password_con
 ActiveRecord::Base.connection.execute('TRUNCATE ' + AssetType.table_name + ' RESTART IDENTITY')
 AssetType.create({ title: 'Text', published: true})
 AssetType.create({ title: 'Audio', published: true})
+
+ActiveRecord::Base.connection.execute('TRUNCATE ' + PaidCondition.table_name + ' RESTART IDENTITY')
+PaidCondition.create({ title: 'Free', enabled: true})
+PaidCondition.create({ title: 'Charge', enabled: true})

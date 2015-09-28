@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  type_id: 1
+  country_id: 1
+  city_id: 1
+  paid_condition_id: 1
+
+two:
+  name: MyString
+  type_id: 1
+  country_id: 1
+  city_id: 1
+  paid_condition_id: 1
