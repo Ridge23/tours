@@ -1,5 +1,5 @@
 ActiveAdmin.register Asset do
-  menu priority: 130
+  menu :priority => 130, url: ->{ admin_assets_path(locale: I18n.locale) }
 
   filter :name
   filter :country
