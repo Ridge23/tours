@@ -9,7 +9,11 @@ ActiveAdmin.register City do
     column :code
     column :enabled
     column :country
-    actions
+    column I18n.t("active_admin.dropdown_actions.button_label") do |city|
+      link_to(I18n.t("active_admin.view"), admin_city_path(:id => city.id, :locale => I18n.locale )) + " | " + \
+      link_to(I18n.t("active_admin.edit"), edit_admin_city_path(:id => city.id, :locale => I18n.locale)) + " | " + \
+      link_to(I18n.t("active_admin.delete"), admin_city_path(:id => city.id, :locale => I18n.locale))
+    end
   end
 
   form do |f|
