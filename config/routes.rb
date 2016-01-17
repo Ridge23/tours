@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   get '/dynamic_selects/cities', to: 'dynamic_selects#cities', as: 'dynamic_select_cities'
