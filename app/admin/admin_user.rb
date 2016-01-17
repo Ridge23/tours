@@ -1,4 +1,5 @@
 ActiveAdmin.register AdminUser do
+  menu :priority => 2, url: ->{ admin_admin_users_path(locale: I18n.locale) }
   permit_params :email, :password, :password_confirmation
 
   index do
@@ -8,7 +9,11 @@ ActiveAdmin.register AdminUser do
     column :current_sign_in_at
     column :sign_in_count
     column :created_at
-    actions
+    column I18n.t("active_admin.dropdown_actions.button_label") do |user|
+      link_to(I18n.t("active_admin.view"), admin_admin_user_path(:id => user.id, :locale => I18n.locale )) + " | " + \
+      link_to(I18n.t("active_admin.edit"), edit_admin_admin_user_path(:id => user.id, :locale => I18n.locale)) + " | " + \
+      link_to(I18n.t("active_admin.delete"), admin_admin_user_path(:id => user.id, :locale => I18n.locale))
+    end
   end
 
   filter :email

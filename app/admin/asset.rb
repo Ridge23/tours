@@ -4,6 +4,19 @@ ActiveAdmin.register Asset do
   filter :name
   filter :country
   filter :city
+  filter :asset_type
+  filter :paid_condition
+
+  index do
+    selectable_column
+    id_column
+    column :name
+    column :country
+    column :city
+    column :paid_condition
+    column :asset_type
+    actions
+  end
 
   form do |f|
     f.inputs "Asset" do
@@ -15,7 +28,7 @@ ActiveAdmin.register Asset do
       f.input :paid_condition
       f.input :asset_type
       f.input :audio_file
-      f.input :audio_file
+      f.input :text_file
     end
     f.actions
   end
