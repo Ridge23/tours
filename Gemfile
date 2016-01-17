@@ -32,6 +32,8 @@ gem 'activeadmin', github: 'activeadmin'
 
 gem "paperclip", "~> 4.3"
 
+gem 'kaminari' # adds pagination to ActiveModels
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

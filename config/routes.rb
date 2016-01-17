@@ -7,6 +7,19 @@ Rails.application.routes.draw do
     ActiveAdmin.routes(self)
   end
 
+  scope '/api' do
+    scope '/v1' do
+      scope '/assets' do
+        get '/' => 'api_assets#index'
+        post '/' => 'api_assets#create'
+        scope '/:id' do
+          get '/' => 'api_assets#show'
+          put '/' => 'api_assets#update'
+        end
+      end
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
