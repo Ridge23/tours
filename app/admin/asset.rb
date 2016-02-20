@@ -16,9 +16,9 @@ ActiveAdmin.register Asset do
     column :paid_condition
     column :asset_type
     column I18n.t("active_admin.dropdown_actions.button_label") do |user|
-      link_to(I18n.t("active_admin.view"), admin_admin_user_path(:id => user.id, :locale => I18n.locale )) + " | " + \
-      link_to(I18n.t("active_admin.edit"), edit_admin_admin_user_path(:id => user.id, :locale => I18n.locale)) + " | " + \
-      link_to(I18n.t("active_admin.delete"), admin_admin_user_path(:id => user.id, :locale => I18n.locale))
+      link_to(I18n.t("active_admin.view"), admin_asset_path(:id => user.id, :locale => I18n.locale )) + " | " + \
+      link_to(I18n.t("active_admin.edit"), edit_admin_asset_path(:id => user.id, :locale => I18n.locale)) + " | " + \
+      link_to(I18n.t("active_admin.delete"), admin_asset_path(:id => user.id, :locale => I18n.locale))
     end
   end
 

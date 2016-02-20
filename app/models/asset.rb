@@ -13,4 +13,10 @@ class Asset < ActiveRecord::Base
                                                                                    "application/msword",
                                                                                    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
                                                                                    "text/plain"]
+
+  before_save do
+    self.text_file_url = self.text_file.url
+    self.audio_file_url = self.audio_file.url
+  end
+
 end

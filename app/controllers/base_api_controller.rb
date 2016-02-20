@@ -8,7 +8,6 @@ class BaseApiController < ApplicationController
     else
       @user = nil
       User.find_each do |u|
-        puts u.api_token
         if Devise.secure_compare(u.api_token, @api_token)
           @user = u
         end

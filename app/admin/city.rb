@@ -5,7 +5,7 @@ ActiveAdmin.register City do
     selectable_column
     id_column
     column :name
-    column :iso_name
+    column :price
     column :code
     column :enabled
     column :country
@@ -23,6 +23,7 @@ ActiveAdmin.register City do
       f.input :code
       f.input :enabled
       f.input :country
+      f.input :price
     end
     f.actions
   end

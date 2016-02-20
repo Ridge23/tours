@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160117161857) do
+ActiveRecord::Schema.define(version: 20160220111836) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,6 +73,8 @@ ActiveRecord::Schema.define(version: 20160117161857) do
     t.string   "text_file_content_type"
     t.integer  "text_file_file_size"
     t.datetime "text_file_updated_at"
+    t.string   "text_file_url"
+    t.string   "audio_file_url"
   end
 
   create_table "cities", force: true do |t|
@@ -81,6 +83,7 @@ ActiveRecord::Schema.define(version: 20160117161857) do
     t.string  "iso_name"
     t.boolean "enabled"
     t.integer "country_id"
+    t.float   "price"
   end
 
   create_table "countries", force: true do |t|

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get '/dynamic_selects/cities', to: 'dynamic_selects#cities', as: 'dynamic_select_cities'
 
+  get "/admin" => redirect("/en/admin")
+
   scope ':locale', defaults: { locale: I18n.locale } do
     ActiveAdmin.routes(self)
   end
@@ -13,7 +15,7 @@ Rails.application.routes.draw do
       scope '/assets' do
         get '/' => 'api_assets#index'
         post '/' => 'api_assets#create'
-        scope '/:id' do
+        scope '/:asset_id' do
           get '/' => 'api_assets#show'
           put '/' => 'api_assets#update'
         end

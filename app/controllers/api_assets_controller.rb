@@ -50,7 +50,7 @@ class ApiAssetsController < BaseApiController
 
   private
   def find_asset
-    @asset = Asset.find_by_name(params[:name])
+    @asset = Asset.find_by_id(params[:asset_id])
     render nothing: true, status: :not_found unless @asset.present?
   end
 end
