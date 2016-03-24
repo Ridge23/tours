@@ -1,14 +1,14 @@
 class AuthController < ApplicationController
 
   skip_before_action :verify_authenticity_token
-  
+
   def facebook
     if params[:code].blank?
       render_error "Error with fb"
     else
       access_token = FacebookAuthService.get_access_token(params[:code])
       user_data = FacebookAuthService.get_user_data(access_token)
-      render_success(token: 'opana', id: user_data[:id])
+      render_success(token: 'opana', id: user_data[:email])
     end
   end
 
