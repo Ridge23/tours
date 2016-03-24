@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get "/admin" => redirect("/en/admin")
 
-  get "/auth/facebook", to: 'auth#facebook'
+  post "/auth/facebook", to: 'auth#facebook'
 
   scope ':locale', defaults: { locale: I18n.locale } do
     ActiveAdmin.routes(self)

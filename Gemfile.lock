@@ -116,6 +116,7 @@ GEM
     polyamorous (1.2.0)
       activerecord (>= 3.0)
     rack (1.5.5)
+    rack-cors (0.4.0)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.1.8)
@@ -189,6 +190,7 @@ DEPENDENCIES
   kaminari
   paperclip (~> 4.3)
   pg
+  rack-cors
   rails (= 4.1.8)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
