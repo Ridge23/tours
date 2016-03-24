@@ -80,6 +80,7 @@ GEM
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
     hike (1.2.3)
+    httpclient (2.7.1)
     i18n (0.7.0)
     inherited_resources (1.6.0)
       actionpack (>= 3.2, < 5)
@@ -182,6 +183,7 @@ DEPENDENCIES
   activeadmin!
   coffee-rails (~> 4.0.0)
   devise
+  httpclient
   jbuilder (~> 2.0)
   jquery-rails
   kaminari

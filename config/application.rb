@@ -21,5 +21,13 @@ module Tours
       I18n.default_locale = :en
       I18n.reload!
     end
+
+    config.autoload_paths += %W(
+      #{config.root}/app/services
+    )
+
+    config.eager_load_paths += %W(
+      #{config.root}/app/services
+    )
   end
 end
