@@ -4,7 +4,7 @@ class FacebookAuthService
   DATA_URL = 'https://graph.facebook.com/v2.5/me'
   APP_ID = '931878413569445'
   APP_SECRET = '3744d8b6e77b05b44eccac87e8c21b79'
-  REDIRECT_URI = 'http://localhost:3000/auth/facebook/'
+  REDIRECT_URI = 'http://localhost:8100/'
 
   @client = HTTPClient.new
 
@@ -21,10 +21,10 @@ class FacebookAuthService
     @data = JSON.parse(response.body).with_indifferent_access
     @data['image_url'] = @data['picture']['data']['url'] if @data['picture'].present?
     @uid = @data[:id] ||= @data[:sub]
-    @data
+    self.formatted_user_data
   end
 
-  def formatted_user_data
+  def self.formatted_user_data
     {
         facebook_profile: @data['link'],
         first_name:       @data['first_name'],

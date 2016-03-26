@@ -8,7 +8,22 @@ class AuthController < ApplicationController
     else
       access_token = FacebookAuthService.get_access_token(params[:code])
       user_data = FacebookAuthService.get_user_data(access_token)
-      render_success(token: 'opana', id: user_data[:email])
+      user = User.find_by_email(user_data[:email]);
+      if !user
+        generated_password = Devise.friendly_token.first(8)
+        user = User.create!(:email => user_data[:email], :password => generated_password )
+        user.first_name = user_data[:first_name]
+        user.last_name = user_data[:last_name]
+        user.image_url = user_data[:image_url]
+        if user_data[:gender] === 'male'
+          user.is_female = false
+        else
+          user.is_female = true
+        end
+        user.save
+      end
+
+      render_success(token: user.authentication_token, id: user_data[:email])
     end
   end
 
