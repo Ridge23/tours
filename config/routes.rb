@@ -22,6 +22,19 @@ Rails.application.routes.draw do
           put '/' => 'api_assets#update'
         end
       end
+      scope '/cities' do
+        get '/' => 'api_cities#index'
+        scope '/:city_id' do
+          get '/' => 'api_cities#show'
+        end
+      end
+      scope '/countries' do
+        get '/' => 'api_countries#index'
+        scope '/:country_id' do
+          get '/' => 'api_cities#show'
+        end
+      end
+
     end
   end
 
