@@ -33,6 +33,9 @@ ActiveAdmin.register Asset do
       f.input :asset_type
       f.input :audio_file
       f.input :text_file
+      f.input :latitude
+      f.input :longitude
+      f.input :text
     end
     f.actions
   end
