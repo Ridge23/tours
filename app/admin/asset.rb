@@ -35,7 +35,7 @@ ActiveAdmin.register Asset do
       f.input :text_file
       f.input :latitude
       f.input :longitude
-      f.input :text
+      f.input :thumbnail, :as => :file, :hint => image_tag(f.object.thumbnail.url(:thumb))
     end
     f.actions
   end

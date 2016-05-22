@@ -8,9 +8,18 @@ class ApiCitiesController < BaseApiController
     cityHash = Hash.new
     cityHash[:id] = city.id
     cityHash[:name] = city.name
+    cityHash[:assets] = []
 
     assets = Asset.where(:city_id => city.id).all
-    cityHash[:assets] = assets
+    assets.each do |asset|
+      assetHash = Hash.new
+      assetHash[:id] = asset.id
+      assetHash[:name] = asset.name
+      assetHash[:text_file_file_name] = asset.text_file_file_name
+      assetHash[:audio_file_file_name] = asset.audio_file_file_name
+      assetHash[:thumbnail] = asset.thumbnail.url(:thumb)
+      cityHash[:assets].push(assetHash)
+    end
 
     render :json => cityHash.to_json
   end

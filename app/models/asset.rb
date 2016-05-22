@@ -14,6 +14,8 @@ class Asset < ActiveRecord::Base
                                                                                    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
                                                                                    "text/plain"]
 
+  has_attached_file :thumbnail, :required => false, :styles => { :medium => "300x300#", :thumb => "200x200#" }
+
   before_save do
     self.text_file_url = self.text_file.url
     self.audio_file_url = self.audio_file.url
