@@ -12,12 +12,12 @@ class ApiCitiesController < BaseApiController
 
     assets = Asset.where(:city_id => city.id).all
     assets.each do |asset|
-      asset_hash = Hash.new
-      asset_hash[:id] = asset.id
-      asset_hash[:name] = asset.name
-      asset_hash[:text_file_file_name] = asset.text_file_file_name
+      asset_hash                        = Hash.new
+      asset_hash[:id]                   = asset.id
+      asset_hash[:name]                 = asset.name
+      asset_hash[:text_file_file_name]  = asset.text_file_file_name
       asset_hash[:audio_file_file_name] = asset.audio_file_file_name
-      asset_hash[:thumbnail] = asset.thumbnail.url(:thumb)
+      asset_hash[:thumbnail]            = asset.thumbnail.url(:thumb)
       city_hash[:assets].push(asset_hash)
     end
 
