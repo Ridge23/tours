@@ -40,6 +40,18 @@ gem 'rack-cors', :require => 'rack/cors'
 
 gem 'simple_token_authentication', '~> 1.0' # see semver.org
 
+gem "capistrano", "~> 3.4"
+
+gem 'capistrano-rails'
+
+gem 'capistrano-bundler'
+
+gem 'capistrano-rvm'
+
+gem 'capistrano-rbenv'
+
+gem 'capistrano3-puma'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

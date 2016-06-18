@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: tours_production
-  username: tours
+  database: travelapp
+  username: <%= ENV['TOURS_DB_USER'] %>
   password: <%= ENV['TOURS_DATABASE_PASSWORD'] %>
+  host:     <%= ENV['TOURS_DATABASE_HOST'] %>
