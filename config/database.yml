@@ -84,3 +84,4 @@ production:
   username: <%= ENV['TOURS_DB_USER'] %>
   password: <%= ENV['TOURS_DATABASE_PASSWORD'] %>
   host:     <%= ENV['TOURS_DATABASE_HOST'] %>
+  port: 5432
