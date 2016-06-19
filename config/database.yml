@@ -81,7 +81,7 @@ test:
 production:
   <<: *default
   database: travelapp
-  username: <%= ENV['TOURS_DB_USER'] %>
+  username: <%= ENV['TOURS_DATABASEs_USER'] %>
   password: <%= ENV['TOURS_DATABASE_PASSWORD'] %>
   host:     <%= ENV['TOURS_DATABASE_HOST'] %>
   port: 5432
