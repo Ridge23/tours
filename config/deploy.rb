@@ -10,4 +10,4 @@ set :puma_bind, 'tcp://0.0.0.0:9292'
 # Roles
 role :web, '52.29.110.91'
 role :app, '52.29.110.91'
-role :db,  '52.29.110.91', :primary => true
+role :db, '52.29.110.91', :primary => true
