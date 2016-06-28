@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
-  menu :priority => 2, url: ->{ admin_users_path(locale: I18n.locale) }
+  menu :priority => 3, label: proc{ I18n.t("active_admin.menu.users") }, url: ->{ admin_users_path(locale: I18n.locale) }
   permit_params :email, :password, :password_confirmation, :api_token
 
   index do

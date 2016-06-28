@@ -1,6 +1,6 @@
 ActiveAdmin.register PaidCondition do
   permit_params :title
-  menu :priority => 120, url: ->{ admin_paid_conditions_path(locale: I18n.locale) }
+  menu :priority => 120, label: proc{ I18n.t("active_admin.menu.paid_conditions") }, url: ->{ admin_paid_conditions_path(locale: I18n.locale) }
   index do
     selectable_column
     id_column

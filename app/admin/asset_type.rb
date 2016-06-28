@@ -1,6 +1,6 @@
 ActiveAdmin.register AssetType do
   permit_params :title, :published
-  menu :priority => 110, url: ->{ admin_asset_types_path(locale: I18n.locale) }
+  menu :priority => 110, label: proc{ I18n.t("active_admin.menu.asset_types") }, url: ->{ admin_asset_types_path(locale: I18n.locale) }
 
   index do
     selectable_column

@@ -4,6 +4,14 @@ es:
       long: "%Y-%m-%d %H:%M:%S"
   active_admin:
     dashboard: Inicio
+    menu:
+      admin_users: "Administradores"
+      users: "Usuarios"
+      countries: "Paises"
+      cities: "Ciudades"
+      asset_types: "Typo de activo"
+      paid_conditions: "Condiciones de pago"
+      assets: "Activo"
     dashboard_welcome:
       welcome: "Bienvenido a Active Admin. Esta es la página de inicio predeterminada."
       call_to_action: "Para agregar secciones edite 'app/admin/dashboard.rb'"

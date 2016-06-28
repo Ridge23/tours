@@ -1,5 +1,5 @@
 ActiveAdmin.register Asset do
-  menu :priority => 130, url: ->{ admin_assets_path(locale: I18n.locale) }
+  menu :priority => 130, label: proc{ I18n.t("active_admin.menu.assets") }, url: ->{ admin_assets_path(locale: I18n.locale) }
 
   filter :name
   filter :country

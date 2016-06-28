@@ -4,6 +4,14 @@ ru:
       long: "%Y-%m-%d %H:%M:%S"
   active_admin:
     dashboard: "Панель управления"
+    menu:
+      admin_users: "Админ пользователи"
+      users: "Пользователи"
+      countries: "Страны"
+      cities: "Города"
+      asset_types: "Типы активов"
+      paid_conditions: "Условия оплаты"
+      assets: "Актив"
     dashboard_welcome:
       welcome: "Добро пожаловать в Active Admin. Это стандартная страница управления сайтом."
       call_to_action: "Чтобы добавить сюда что-нибудь загляните в 'app/admin/dashboard.rb'"

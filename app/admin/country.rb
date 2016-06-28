@@ -1,6 +1,6 @@
 ActiveAdmin.register Country do
   permit_params :name, :iso_name, :code, :enabled
-  menu :priority => 90, url: ->{ admin_countries_path(locale: I18n.locale) }
+  menu :priority => 90, label: proc{ I18n.t("active_admin.menu.countries") }, url: ->{ admin_countries_path(locale: I18n.locale) }
 
   index do
     selectable_column

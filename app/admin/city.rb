@@ -1,6 +1,6 @@
 ActiveAdmin.register City do
   permit_params :name, :iso_name, :code, :enabled, :country
-  menu :priority => 100, url: ->{ admin_cities_path(locale: I18n.locale) }
+  menu :priority => 100, label: proc{ I18n.t("active_admin.menu.cities") }, url: ->{ admin_cities_path(locale: I18n.locale) }
   index do
     selectable_column
     id_column

@@ -20,4 +20,13 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  active_admin:
+    dashboard: Dashboard
+    menu:
+      admin_users: "Admin Users"
+      users: "Users"
+      countries: "Countries"
+      cities: "Cities"
+      asset_types: "Asset types"
+      paid_conditions: "Paid conditions"
+      assets: "Assets"
