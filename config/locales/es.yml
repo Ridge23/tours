@@ -3,7 +3,7 @@ es:
     formats:
       long: "%Y-%m-%d %H:%M:%S"
   active_admin:
-    dashboard: Inicio
+    dashboard: Tablero
     menu:
       admin_users: "Administradores"
       users: "Usuarios"
