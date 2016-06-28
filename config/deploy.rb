@@ -11,3 +11,14 @@ set :puma_bind, 'tcp://0.0.0.0:3000'
 role :web, '52.29.110.91'
 role :app, '52.29.110.91'
 role :db, '52.29.110.91', :primary => true
+
+desc "Seed the database."
+task :seed_db do
+  on roles(:app) do
+    within "#{current_path}" do
+      with rails_env: :production do
+        execute :rake, "db:seed"
+      end
+    end
+  end
+end
