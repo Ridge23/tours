@@ -1,0 +1,7 @@
+=== puma startup: 2016-06-28 18:51:16 +0200 ===
+[93421] * Starting control server on unix:///var/folders/6_/g5gm732j28g96f67vp4js_180000gn/T/puma-status-1467132676530-93421
+[93421] - Worker 0 (pid: 93434) booted, phase: 0
+[93421] - Gracefully shutting down workers...
+[93421] === puma shutdown: 2016-06-28 18:51:25 +0200 ===
+[93421] - Goodbye!
+Exiting

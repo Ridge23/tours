@@ -232,6 +232,7 @@ DEPENDENCIES
   kaminari
   paperclip (~> 4.3)
   pg
+  puma
   rack-cors
   rails (= 4.1.8)
   sass-rails (~> 4.0.3)
