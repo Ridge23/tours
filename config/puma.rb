@@ -10,7 +10,7 @@ stdout_redirect 'log/puma.log', 'log/puma_err.log'
 
 # quiet
 threads 0, 16
-bind 'unix:///var/run/travel_app.sock'
+bind 'unix:///tmp/sockets/travel_app.sock'
 
 # on_restart do
 #   puts 'On restart...'
