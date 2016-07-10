@@ -5,6 +5,8 @@ set :repo_url, 'git@github.com:Ridge23/tours.git'
 set :user, 'ubuntu'
 set :rbenv_ruby, '2.3.0'
 
+pidfile '/var/www/TravelApp/current/shared/pids'
+
 set :puma_bind, 'tcp://0.0.0.0:3000'
 
 # Roles
