@@ -24,6 +24,14 @@ ActiveAdmin.register Country do
     f.actions
   end
 
+  show do
+    attributes_table do
+      row :name
+      row :iso_name
+      row :enabled
+    end
+  end
+
   filter :name
   filter :iso_name
 
