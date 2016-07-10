@@ -6,7 +6,6 @@ ActiveAdmin.register Country do
     selectable_column
     id_column
     column :name
-    column :code
     column :iso_name
     column :enabled
     column I18n.t("active_admin.dropdown_actions.button_label") do |country|
@@ -14,6 +13,15 @@ ActiveAdmin.register Country do
       link_to(I18n.t("active_admin.edit"), edit_admin_country_path(:id => country.id, :locale => I18n.locale)) + " | " + \
       link_to(I18n.t("active_admin.delete"), admin_country_path(:id => country.id, :locale => I18n.locale))
     end
+  end
+
+  form do |f|
+    f.inputs "Country Details" do
+      f.input :name
+      f.input :iso_name
+      f.input :enabled
+    end
+    f.actions
   end
 
   filter :name
