@@ -3,8 +3,8 @@
 #environment 'production'
 daemonize false
 
-pidfile 'tmp/pids/puma.pid'
-state_path 'tmp/pids/puma.state'
+pidfile '/var/www/TravelApp/current/shared/pids/puma.pid'
+state_path '/var/www/TravelApp/current/shared/pids/puma.state'
 
 stdout_redirect 'log/puma.log', 'log/puma_err.log'
 
