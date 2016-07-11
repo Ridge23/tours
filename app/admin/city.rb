@@ -28,6 +28,8 @@ ActiveAdmin.register City do
   show do
     attributes_table do
       row :name
+      row :country
+      row :price
       row :enabled
     end
   end
