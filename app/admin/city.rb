@@ -6,7 +6,6 @@ ActiveAdmin.register City do
     id_column
     column :name
     column :price
-    column :code
     column :enabled
     column :country
     column I18n.t("active_admin.dropdown_actions.button_label") do |city|
@@ -19,14 +18,24 @@ ActiveAdmin.register City do
   form do |f|
     f.inputs "City Details" do
       f.input :name
-      f.input :iso_name
-      f.input :code
-      f.input :enabled
       f.input :country
       f.input :price
+      f.input :enabled
     end
     f.actions
   end
+
+  show do
+    attributes_table do
+      row :name
+      row :enabled
+    end
+  end
+
+  filter :country
+  filter :name
+  filter :price
+  filter :enabled
 
   controller do
     def permitted_params
