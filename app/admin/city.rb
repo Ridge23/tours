@@ -43,6 +43,8 @@ ActiveAdmin.register City do
     def permitted_params
       params.permit!
     end
+
+    before_filter { @page_title =  I18n.t("active_admin.menu.cities") }
   end
 
 end

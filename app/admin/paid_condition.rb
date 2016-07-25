@@ -17,4 +17,8 @@ ActiveAdmin.register PaidCondition do
 
   filter :title
 
+  controller do
+    before_filter { @page_title =  I18n.t("active_admin.menu.paid_conditions") }
+  end
+
 end

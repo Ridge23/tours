@@ -2,7 +2,7 @@ ActiveAdmin.register AdminUser do
   menu :priority => 2, label: proc{ I18n.t("active_admin.menu.admin_users") }, url: ->{ admin_admin_users_path(locale: I18n.locale) }
   permit_params :email, :password, :password_confirmation
 
-  index do
+  index  do
     selectable_column
     id_column
     column :email
@@ -28,6 +28,10 @@ ActiveAdmin.register AdminUser do
       f.input :password_confirmation
     end
     f.actions
+  end
+
+  controller do
+    before_filter { @page_title =  I18n.t("active_admin.menu.admin_users") }
   end
 
 end

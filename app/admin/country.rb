@@ -35,4 +35,8 @@ ActiveAdmin.register Country do
   filter :name
   filter :iso_name
 
+  controller do
+    before_filter { @page_title =  I18n.t("active_admin.menu.countries") }
+  end
+
 end
