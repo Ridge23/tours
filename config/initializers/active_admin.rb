@@ -264,7 +264,7 @@ ActiveAdmin.setup do |config|
     admin.build_menu :utility_navigation do |menu|
       menu.add :label => "Languages" do |lang|
         lang.add :label => "English",:url => proc { url_for(:locale => 'en') }, id: 'i18n-en', :priority => 1
-        lang.add :label => "Spain",:url => proc { url_for(:locale => 'es') }, id: 'i18n-es', :priority => 2
+        lang.add :label => "Spanish",:url => proc { url_for(:locale => 'es') }, id: 'i18n-es', :priority => 2
         lang.add :label => "Russian",:url => proc { url_for(:locale => 'ru') }, id: 'i18n-ru', :priority => 3
       end
       menu.add :label => proc { display_name current_active_admin_user },
