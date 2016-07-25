@@ -32,7 +32,7 @@ ActiveAdmin.register Asset do
       f.input :paid_condition
       f.input :asset_type
       f.input :audio_file
-      f.input :text_file
+      f.input :text, :input_html => { :class => "tinymce" }, :as => :text
       f.input :latitude
       f.input :longitude
       f.input :thumbnail, :as => :file, :hint => image_tag(f.object.thumbnail.url(:thumb))
