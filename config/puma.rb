@@ -1,6 +1,6 @@
 #!/usr/bin/env puma
 
-#environment 'production'
+environment 'production'
 daemonize false
 
 pidfile 'tmp/pids/puma.pid'
