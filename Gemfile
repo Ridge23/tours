@@ -30,7 +30,9 @@ gem 'devise'
 
 gem 'activeadmin', github: 'activeadmin'
 
-gem "paperclip", "~> 4.3"
+gem 'paperclip', "~> 4.3"
+
+gem 'aws-sdk', '< 2.0'
 
 gem 'kaminari' # adds pagination to ActiveModels
 

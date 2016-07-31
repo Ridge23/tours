@@ -37,4 +37,18 @@ Rails.application.configure do
 
   Paperclip.options[:command_path] = "/usr/local/bin/convert"
 
+  config.paperclip_defaults = {
+      :storage => :s3,
+      :default_url => "/default.default",
+      :s3_region => 'Frankfurt',
+      :s3_host_name => 's3.eu-central-1.amazonaws.com',
+      :s3_credentials => {
+          :bucket => 'travelappalpha',
+          :access_key_id => 'AKIAIIO42QHVUX2KWYYA',
+          :secret_access_key => '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',
+          :region => 'Frankfurt'
+      }
+
+  }
+
 end
