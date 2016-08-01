@@ -1,4 +1,4 @@
-lock '3.5.0'
+lock '3.6.0'
 
 set :application, 'TravelApp'
 set :repo_url, 'git@github.com:Ridge23/tours.git'

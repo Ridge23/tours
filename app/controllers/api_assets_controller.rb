@@ -15,6 +15,7 @@ class ApiAssetsController < BaseApiController
     asset_hash                        = Hash.new
     asset_hash[:id]                   = asset.id
     asset_hash[:name]                 = asset.name
+    asset_hash[:text]                 = asset.text
     asset_hash[:text_file_file_name]  = asset.text_file_file_name
     asset_hash[:text_file_url]        = asset.text_file_url
     asset_hash[:audio_file_file_name] = asset.audio_file_file_name
