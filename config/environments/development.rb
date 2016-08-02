@@ -40,13 +40,13 @@ Rails.application.configure do
   config.paperclip_defaults = {
       :storage => :s3,
       :default_url => "/default.default",
-      :s3_region => 'Frankfurt',
+      :s3_region => ENV.fetch('AWS_REGION'),
       :s3_host_name => 's3.eu-central-1.amazonaws.com',
       :s3_credentials => {
-          :bucket => 'travelappalpha',
-          :access_key_id => 'AKIAIIO42QHVUX2KWYYA',
-          :secret_access_key => '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',
-          :region => 'Frankfurt'
+          :bucket => ENV.fetch('S3_BUCKET_NAME'),
+          :access_key_id => ENV.fetch('AWS_ACCESS_KEY_ID'),
+          :secret_access_key => ENV.fetch('AWS_SECRET_ACCESS_KEY'),
+          :region => ENV.fetch('AWS_REGION')
       }
 
   }
