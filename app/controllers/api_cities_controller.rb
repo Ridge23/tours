@@ -18,6 +18,8 @@ class ApiCitiesController < BaseApiController
       asset_hash[:text_file_file_name]  = asset.text_file_file_name
       asset_hash[:audio_file_file_name] = asset.audio_file_file_name
       asset_hash[:thumbnail]            = asset.thumbnail.url(:thumb)
+      asset_hash[:latitude]             = asset.latitude
+      asset_hash[:longitude]            = asset.longitude
       city_hash[:assets].push(asset_hash)
     end
 
