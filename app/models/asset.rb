@@ -1,4 +1,6 @@
 class Asset < ActiveRecord::Base
+  attr_writer :remove_audio
+
   belongs_to :asset_type
   belongs_to :paid_condition
   belongs_to :country
@@ -12,5 +14,11 @@ class Asset < ActiveRecord::Base
   before_save do
     self.audio_file_url = self.audio_file.url
   end
+
+  def remove_audio
+    @remove_audio || false
+  end
+
+  before_validation { self.audio_file.clear if self.remove_audio == '1' }
 
 end

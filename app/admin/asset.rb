@@ -32,6 +32,7 @@ ActiveAdmin.register Asset do
       f.input :paid_condition
       f.input :asset_type
       f.input :audio_file
+      f.input :remove_audio, as: :boolean, required: false, label: "Remove Audio"
       f.input :text, :input_html => { :class => "tinymce" }, :as => :text
       f.input :latitude
       f.input :longitude
