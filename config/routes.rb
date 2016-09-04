@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "/admin" => redirect("/en/admin")
 
   post "/auth/facebook", to: 'auth#facebook'
+  post "/auth/google", to: 'auth#google'
 
   scope ':locale', defaults: { locale: I18n.locale } do
     ActiveAdmin.routes(self)
@@ -34,7 +35,6 @@ Rails.application.routes.draw do
           get '/' => 'api_cities#show'
         end
       end
-
     end
   end
 
