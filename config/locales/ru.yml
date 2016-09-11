@@ -12,6 +12,7 @@ ru:
       asset_types: "Типы активов"
       paid_conditions: "Условия оплаты"
       assets: "Активы"
+      asset_images: "Изображения активов"
     dashboard_welcome:
       welcome: "Добро пожаловать в Active Admin. Это стандартная страница управления сайтом."
       call_to_action: "Чтобы добавить сюда что-нибудь загляните в 'app/admin/dashboard.rb'"

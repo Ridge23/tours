@@ -12,6 +12,7 @@ es:
       asset_types: "Typo de activo"
       paid_conditions: "Condiciones de pago"
       assets: "Activo"
+      asset_images: "Fotos de activo"
     dashboard_welcome:
       welcome: "Bienvenido a Active Admin. Esta es la página de inicio predeterminada."
       call_to_action: "Para agregar secciones edite 'app/admin/dashboard.rb'"
