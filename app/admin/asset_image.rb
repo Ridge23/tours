@@ -8,6 +8,7 @@ ActiveAdmin.register AssetImage do
     selectable_column
     id_column
     column :title
+    column :asset_id
     column :enabled
     column :updated_at
     column I18n.t("active_admin.dropdown_actions.button_label") do |asset_image|

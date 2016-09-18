@@ -19,8 +19,9 @@ Rails.application.routes.draw do
         get '/' => 'api_assets#index'
         post '/' => 'api_assets#create'
         scope '/:asset_id' do
-          get '/' => 'api_assets#show'
-          put '/' => 'api_assets#update'
+          get '/'       => 'api_assets#show'
+          put '/'       => 'api_assets#update'
+          get '/images' => 'api_images#index'
         end
       end
       scope '/cities' do
