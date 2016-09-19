@@ -7,10 +7,10 @@ class ApiImagesController < BaseApiController
     images.each do |image|
       image_hash = Hash.new
 
-      image_hash[:id] = image.id
-      image_hash[:title] = image.title
+      image_hash[:id]          = image.id
+      image_hash[:title]       = image.title
       image_hash[:description] = image.description
-      image_hash[:url] = image.image_file.url(:thumb)
+      image_hash[:url]         = image.image_file.url
 
       images_array.append(image_hash)
     end
