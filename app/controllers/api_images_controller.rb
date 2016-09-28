@@ -8,9 +8,10 @@ class ApiImagesController < BaseApiController
       image_hash = Hash.new
 
       image_hash[:id]          = image.id
-      image_hash[:title]       = image.title
+      image_hash[:sub]         = image.title
       image_hash[:description] = image.description
-      image_hash[:url]         = image.image_file.url
+      image_hash[:thumb]       = image.image_file.url(:thumb)
+      image_hash[:src]         = image.image_file.url
 
       images_array.append(image_hash)
     end
