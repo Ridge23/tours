@@ -20,6 +20,7 @@ class ApiAssetsController < BaseApiController
     asset_hash[:text_file_url]        = asset.text_file_url
     asset_hash[:audio_file_file_name] = asset.audio_file_file_name
     asset_hash[:audio_file_url]       = asset.audio_file_url
+    asset_hash[:audio_file_duration]  = asset.audio_duration
     asset_hash[:thumbnail_url]        = asset.thumbnail.url(:thumb)
     asset_hash[:thumbnail_file_name]  = asset.thumbnail.original_filename
     @asset                            = asset_hash
