@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160907165053) do
+ActiveRecord::Schema.define(version: 20161028212814) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(version: 20160907165053) do
     t.integer  "thumbnail_file_size"
     t.datetime "thumbnail_updated_at"
     t.string   "text"
+    t.string   "audio_duration"
   end
 
   create_table "cities", force: :cascade do |t|
