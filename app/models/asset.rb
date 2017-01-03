@@ -14,7 +14,7 @@ class Asset < ActiveRecord::Base
   before_save do
     self.audio_file_url = self.audio_file.url
 
-    TagLib::FileRef.open(self.audio_file.url) do |fileref|
+    TagLib::FileRef.open(audio_file.queued_for_write[:original].path) do |fileref|
       unless fileref.null?
         properties = fileref.audio_properties
         @length = properties.length
