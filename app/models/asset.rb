@@ -16,10 +16,12 @@ class Asset < ActiveRecord::Base
   before_save do
     self.audio_file_url = self.audio_file.url
 
-    TagLib::FileRef.open(audio_file.queued_for_write[:original].path) do |fileref|
-      unless fileref.null?
-        properties = fileref.audio_properties
-        @length = properties.length
+    if audio_file.queued_for_write[:original]
+      TagLib::FileRef.open(audio_file.queued_for_write[:original].path) do |fileref|
+        unless fileref.null?
+          properties = fileref.audio_properties
+          @length = properties.length
+        end
       end
     end
 
