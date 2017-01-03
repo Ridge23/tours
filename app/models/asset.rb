@@ -1,3 +1,5 @@
+require 'taglib'
+
 class Asset < ActiveRecord::Base
   attr_writer :remove_audio
 

@@ -18,3 +18,7 @@ Create pid file:
 
 ``mkdir tmp/pid``
 ``touch tmp/pids/puma.pid``
+
+Then start puma:
+
+``$HOME/.rbenv/bin/rbenv exec bundle exec puma -C /var/www/TravelApp/current/config/puma.rb ``
