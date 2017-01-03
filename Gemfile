@@ -56,6 +56,8 @@ gem 'capistrano3-puma'
 
 gem 'puma'
 
+gem 'taglib-ruby'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

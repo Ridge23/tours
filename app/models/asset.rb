@@ -13,6 +13,15 @@ class Asset < ActiveRecord::Base
 
   before_save do
     self.audio_file_url = self.audio_file.url
+
+    TagLib::FileRef.open(self.audio_file.path) do |fileref|
+      unless fileref.null?
+        properties = fileref.audio_properties
+        @length = properties.length
+      end
+    end
+
+    self.audio_duration = @length
   end
 
   def remove_audio
