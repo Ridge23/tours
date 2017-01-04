@@ -22,7 +22,7 @@ ActiveAdmin.register AssetImage do
     f.inputs "Asset Image" do
       f.input :title
       f.input :description
-      f.input :asset
+      f.input :asset, :as => :select, :collection => option_groups_from_collection_for_select(City.all, :assets, :name, :id, :name, f.object.asset.id)
       f.input :enabled
       f.input :image_file, :as => :file, :hint => image_tag(f.object.image_file.url(:thumb))
     end
