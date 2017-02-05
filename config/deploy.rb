@@ -22,3 +22,5 @@ task :seed_db do
     end
   end
 end
+
+after 'deploy:publishing', 'deploy:restart'
