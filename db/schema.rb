@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161028212814) do
+ActiveRecord::Schema.define(version: 20170312190604) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,19 @@ ActiveRecord::Schema.define(version: 20161028212814) do
     t.string   "image_file_content_type"
     t.integer  "image_file_file_size"
     t.datetime "image_file_updated_at"
+    t.boolean  "enabled"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "asset_media", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.integer  "asset_id"
+    t.string   "media_file_file_name"
+    t.string   "media_file_content_type"
+    t.integer  "media_file_file_size"
+    t.datetime "media_file_updated_at"
     t.boolean  "enabled"
     t.datetime "created_at"
     t.datetime "updated_at"
