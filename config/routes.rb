@@ -22,6 +22,7 @@ Rails.application.routes.draw do
           get '/'       => 'api_assets#show'
           put '/'       => 'api_assets#update'
           get '/images' => 'api_images#index'
+          get '/media'  => 'api_media#index'
         end
       end
       scope '/cities' do
