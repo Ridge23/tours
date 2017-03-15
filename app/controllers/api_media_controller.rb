@@ -1,6 +1,6 @@
 class ApiMediaController < BaseApiController
   def index
-    media = AssetMedia.where(:asset_id => params[:asset_id]).all
+    media = AssetMedia.where(:asset_id => params[:asset_id]).order("position ASC").all
 
     media_array = Array.new
 
