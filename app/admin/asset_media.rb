@@ -1,10 +1,15 @@
 ActiveAdmin.register AssetMedia do
   menu :priority => 160, label: proc{ I18n.t("active_admin.menu.asset_media") }, url: ->{ admin_asset_media_path(locale: I18n.locale) }
 
+  config.sort_order = 'position_asc'
+
   filter :title
   filter :asset
 
+  sortable
+
   index do
+    sortable_handle_column
     selectable_column
     id_column
     column :title

@@ -1,4 +1,6 @@
 class AssetMedia < ActiveRecord::Base
+  acts_as_list
+
   belongs_to :asset
 
   has_attached_file :media_file, :required => true

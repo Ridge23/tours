@@ -39,6 +39,8 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    activeadmin-sortable (0.0.3)
+      activeadmin (>= 0.4)
     activejob (4.2.6)
       activesupport (= 4.2.6)
       globalid (>= 0.3.0)
@@ -55,6 +57,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    acts_as_list (0.9.3)
+      activerecord (>= 3.0)
     airbrussh (1.1.0)
       sshkit (>= 1.6.1, != 1.7.0)
     arbre (1.1.1)
@@ -253,6 +257,8 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin!
+  activeadmin-sortable
+  acts_as_list
   aws-sdk (< 2.0)
   capistrano (~> 3.4)
   capistrano-bundler

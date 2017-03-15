@@ -58,6 +58,10 @@ gem 'puma'
 
 gem 'taglib-ruby'
 
+gem 'activeadmin-sortable'
+
+gem 'acts_as_list'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
