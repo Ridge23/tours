@@ -28,6 +28,7 @@ ActiveAdmin.register AssetMedia do
       f.input :title
       f.input :description
       f.input :asset, :as => :select, :collection => option_groups_from_collection_for_select(City.all, :assets, :name, :id, :name, f.object.asset ? f.object.asset.id : 0)
+      f.input :media_duration, :input_html => { :disabled => true }
       f.input :enabled
       f.input :media_file, :as => :file, :hint => f.object.media_file.url
     end
