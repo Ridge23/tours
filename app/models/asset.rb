@@ -13,24 +13,28 @@ class Asset < ActiveRecord::Base
 
   has_attached_file :thumbnail, :required => false, :styles => { :medium => "300x300#", :thumb => "200x200#" }
 
-  before_save do
-    self.audio_file_url = self.audio_file.url
-
-    if audio_file.queued_for_write[:original]
-      TagLib::FileRef.open(audio_file.queued_for_write[:original].path) do |fileref|
-        unless fileref.null?
-          properties = fileref.audio_properties
-          @length = properties.length
-        end
-      end
-    end
-
-    self.audio_duration = @length
-  end
+  before_save :set_duration
+  before_create :set_duration
 
   def remove_audio
     @remove_audio || false
   end
+
+  private
+    def set_duration
+      self.audio_file_url = self.audio_file.url
+
+      if audio_file.queued_for_write[:original]
+        TagLib::FileRef.open(audio_file.queued_for_write[:original].path) do |fileref|
+          unless fileref.null?
+            properties = fileref.audio_properties
+            @length = properties.length
+          end
+        end
+      end
+
+      self.audio_duration = @length
+    end
 
   before_validation { self.audio_file.clear if self.remove_audio == '1' }
 
