@@ -9,6 +9,10 @@ class AssetMedia < ActiveRecord::Base
   before_create :set_duration
   before_save :set_duration
 
+  def media_from_url(url)
+    self.media_file = URI.parse(url).open
+  end
+
   private
     def set_duration
       if media_file.queued_for_write[:original]

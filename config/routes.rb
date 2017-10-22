@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     ActiveAdmin.routes(self)
   end
 
-  scope '/api' do
+  scope '/api', :defaults => {:format => 'json'} do
     scope '/v1' do
       scope '/assets' do
         get '/' => 'api_assets#index'
@@ -23,6 +23,7 @@ Rails.application.routes.draw do
           put '/'       => 'api_assets#update'
           get '/images' => 'api_images#index'
           get '/media'  => 'api_media#index'
+          post '/media' => 'api_media#create'
         end
       end
       scope '/cities' do
